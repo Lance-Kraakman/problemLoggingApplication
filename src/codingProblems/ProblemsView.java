@@ -19,7 +19,7 @@ public class ProblemsView extends JPanel {
 	final int buttonCount = 3;
 	
 	//Objects we need to access in the searchBar
-	private JTextField searchBar;
+	private JTextField searchBar = new JTextField("type or paste in bug, error or problem here.");
 	private JList<String> optionList;
 	private JButton filterButton;
 	private JButton configurationButton;
@@ -50,7 +50,7 @@ public class ProblemsView extends JPanel {
 		add(searchProblemsTitle, c);
 		
 		//Add JTextField for search input
-		searchBar = new JTextField("type or paste in bug, error or problem here.");
+		//searchBar = new JTextField("type or paste in bug, error or problem here.");
 		searchBar.setHorizontalAlignment(JTextField.CENTER);
 		searchBar.setBackground(null);
 		searchBar.setForeground(Color.LIGHT_GRAY);
