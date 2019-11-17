@@ -34,7 +34,7 @@ public class ProblemsView extends JPanel {
 		searchProblemsTitle.setFont(new Font("Century", Font.ITALIC + Font.BOLD, fontSize));
 		searchProblemsTitle.setForeground(myPale);
 		//searchProblemsTitle.setBorder(new BevelBorder(BevelBorder.RAISED, myGreen, myGreen));
-		searchProblemsTitle.setBorder(new LineBorder(myGreen,3));
+		searchProblemsTitle.setBorder(new LineBorder(Color.WHITE,3));
 		searchProblemsTitle.setHorizontalAlignment(JLabel.CENTER);
 		//setBackground(myBlack);
 		c.fill = GridBagConstraints.BOTH;
@@ -59,7 +59,7 @@ public class ProblemsView extends JPanel {
 		//add action listenet to this that updates the font 
 		JList optionList = new JList();
 		optionList.setBackground(null);
-		
+		optionList.setBorder(new LineBorder(Color.WHITE, 3));
 		
 		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 0;
