@@ -6,11 +6,18 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 
 public class SolutionsView extends JPanel {
+	
 	Color myBlack = new Color(4,12,14);
 	Color myBlue = new Color(19, 34, 38);
 	Color myCoffe = new Color(190, 144, 99);
 	Color myPale = new Color(164, 151, 142);
 	Color myGreen = new Color(82, 91, 86);
+	
+	private JTextArea console;
+	private JScrollPane consoleContainer;
+	private JButton EditButton;
+	private JButton SaveButton;
+	
 	public SolutionsView() {
 		setVisible(true);
 		setBorder(new BevelBorder(BevelBorder.LOWERED,myGreen,myGreen));
@@ -20,7 +27,7 @@ public class SolutionsView extends JPanel {
 		setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		setBackground(myBlue);	
 		//create console for scroll pane
-		JTextArea console = new JTextArea();
+		console = new JTextArea();
 		console.setOpaque(false);
 		console.setBorder(null);
 		console.setForeground(myCoffe);
@@ -28,10 +35,10 @@ public class SolutionsView extends JPanel {
 		console.setLineWrap(true);
 		
 		//create scroll pane
-		JScrollPane textArea = new JScrollPane(console);
-		textArea.getViewport().setBackground(myBlue);
-		textArea.setEnabled(true);
-		textArea.setBorder(null);
+		JScrollPane consoleContainer = new JScrollPane(console);
+		consoleContainer.getViewport().setBackground(myBlue);
+		consoleContainer.setEnabled(true);
+		consoleContainer.setBorder(null);
 		
 		c.fill = GridBagConstraints.BOTH;
 		c.weightx = 1;
@@ -40,9 +47,9 @@ public class SolutionsView extends JPanel {
 		c.gridx = 0;
 		c.gridy = 0;
 		c.gridwidth = 2;
-		add(textArea, c);
+		add(consoleContainer, c);
 		
-		JButton EditButton = new JButton("Edit");
+		EditButton = new JButton("Edit Solution");
 		EditButton.setBackground(myBlue);
 		EditButton.setForeground(myPale);
 		EditButton.setFocusPainted(false);
@@ -55,7 +62,7 @@ public class SolutionsView extends JPanel {
 		c.weighty = 0.005;
 		add(EditButton, c);
 		
-		JButton SaveButton = new JButton("Save");
+		SaveButton = new JButton("Save Solution");
 		SaveButton.setBackground(myBlue);
 		SaveButton.setForeground(myPale);
 		SaveButton.setFocusPainted(false);
@@ -64,4 +71,38 @@ public class SolutionsView extends JPanel {
 		c.gridy = 1;
 		add(SaveButton, c);
 	}
+
+	//generate default getters and setters
+	public JTextArea getConsole() {
+		return console;
+	}
+
+	public void setConsole(JTextArea console) {
+		this.console = console;
+	}
+
+	public JScrollPane getConsoleContainer() {
+		return consoleContainer;
+	}
+
+	public void setConsoleContainer(JScrollPane consoleContainer) {
+		this.consoleContainer = consoleContainer;
+	}
+
+	public JButton getEditButton() {
+		return EditButton;
+	}
+
+	public void setEditButton(JButton editButton) {
+		EditButton = editButton;
+	}
+
+	public JButton getSaveButton() {
+		return SaveButton;
+	}
+
+	public void setSaveButton(JButton saveButton) {
+		SaveButton = saveButton;
+	}
+
 }

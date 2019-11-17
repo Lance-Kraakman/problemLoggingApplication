@@ -8,15 +8,15 @@ public class ProblemAppView extends JFrame {
 	 * Constructor
 	 * Creates view for main application 
 	 */
+	private ProblemsView ProblemsPane;
+	private SolutionsView solutionPane;
+	
 	public ProblemAppView() {
 		setTitle("Problem Logger");
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		//two main panels 
-		JPanel problemsPane = new JPanel();
-		JPanel solutionPane = new JPanel(); 
-	
+			
 		//theese should actually be sub classes, otherwise
 		//this file will be to big #abstraction or polymorphisim
 		ProblemsView ProblemsPane = new ProblemsView();
@@ -36,18 +36,30 @@ public class ProblemAppView extends JFrame {
 		
 		c.fill = GridBagConstraints.BOTH;
 		//c.ipadx = 400;
-		c.weightx = 0.65;
+		c.weightx = 0.975;
 		c.gridx = 1;
 		c.gridy = 0;
 		getContentPane().add(SolutionsPane, c);
 	}
-	//Test only -> implement in controller
-	public static void main(String[] args) {
-		ProblemAppView view = new ProblemAppView();
-		view.pack();
-		//view.setResizable(false);
-		view.setVisible(true);
-		view.setSize(1000, 500);
+
+	public ProblemsView getProblemsPane() {
+		return ProblemsPane;
 	}
+
+	public void setProblemsPane(ProblemsView problemsPane) {
+		ProblemsPane = problemsPane;
+	}
+
+	public SolutionsView getSolutionPane() {
+		return solutionPane;
+	}
+
+	public void setSolutionPane(SolutionsView solutionPane) {
+		this.solutionPane = solutionPane;
+	}
+
+
+	
+	
 }		
 
