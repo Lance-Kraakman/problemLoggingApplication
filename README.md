@@ -1,2 +1,3 @@
 #problem logging java application
-This is my application
+Created as a refresher / introduction to the java launguge 
+Un-finished but just a "play around" project 
